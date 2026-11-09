@@ -1,0 +1,138 @@
+
+/* ページ全体 */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f2f2f2;
+    font-family: sans-serif;
+}
+
+/* スマホ画面の外枠 */
+.app-screen {
+    width: 100%;
+    max-width: 400px;
+    min-height: 700px;
+    padding: 40px 24px;
+    border: 2px solid #333;
+    border-radius: 12px;
+    background-color: #fff;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* タイトル */
+h1 {
+    margin: 20px 0 0;
+    font-size: 27px;
+    line-height: 1.6;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* はじめるボタンの配置 */
+.start-area {
+    margin-top: 130px;
+}
+
+/* はじめるボタン */
+.start-button {
+    width: 220px;
+    min-height: 90px;
+    border: 2px solid #333;
+    border-radius: 24px;
+    background-color: #fff;
+    color: #222;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* ボタンにマウスを乗せたとき */
+.start-button:hover {
+    background-color: #f0f0f0;
+}
+
+/* 通知設定へのリンク */
+.settings-area {
+    margin-top: auto;
+    padding-top: 60px;
+    padding-bottom: 20px;
+}
+
+.settings-button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    background: transparent;
+    color: #333;
+    font-size: 20px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.settings-button:hover {
+    text-decoration: underline;
+}
+
+/* 音声認識の状態・認識結果 */
+#status,
+#result {
+    width: 100%;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+#status {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+#result {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* スマートフォン向け：画面サイズに合わせて全画面表示 */
+@media (max-width: 600px), (max-height: 500px) and (pointer: coarse) {
+    body {
+        min-height: 100dvh;
+        align-items: stretch;
+    }
+
+    .app-screen {
+        width: 100%;
+        max-width: none;
+        min-height: 100vh;
+        min-height: 100dvh;
+        padding: clamp(24px, 6vh, 40px) clamp(18px, 6vw, 24px);
+        border: 0;
+        border-radius: 0;
+    }
+
+    h1 {
+        font-size: clamp(23px, 6vw, 27px);
+    }
+
+    .start-area {
+        margin-top: clamp(64px, 18vh, 130px);
+    }
+
+    .start-button {
+        width: min(220px, 80vw);
+        min-height: clamp(72px, 12vh, 90px);
+        font-size: clamp(20px, 5.5vw, 24px);
+    }
+
+    .settings-area {
+        padding-top: 32px;
+    }
+}

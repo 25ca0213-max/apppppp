@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新宿駅をしらせるシステム</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+
+    <main class="app-screen">
+
+        <h1>新宿駅を<br>知らせるシステム</h1>
+
+        <div class="start-area">
+            <button type="button" id="startButton" class="start-button">
+                はじめる
+            </button>
+        </div>
+
+        <div class="settings-area">
+            <a href="notification.html" class="settings-button">
+                通知設定
+            </a>
+        </div>
+
+        <!-- 音声認識の状態 -->
+        <p id="status">待機中</p>
+
+        <!-- 認識した音声を表示 -->
+        <p id="result">認識した音声がここに表示されます</p>
+
+    </main>
+
+    <!-- JavaScriptを読み込む -->
+    <script src="static/script.js"></script>
+
+</body>
+</html>
